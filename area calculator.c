@@ -31,7 +31,7 @@ if((shape == 'r') | (shape == 'c') | (shape == 's') | (shape == 't') | (shape ==
         printf("\nArea of the rectangle is: %.3f Unit^2", rectangle(a, b));
     }
 
-    if(shape == 'c') {
+    else if(shape == 'c') {
         float r;
         printf("\nCalculating the area of a circle\n");
         printf("\nEnter radius of the circle: ");
@@ -39,7 +39,7 @@ if((shape == 'r') | (shape == 'c') | (shape == 's') | (shape == 't') | (shape ==
         printf("\nArea of the circle is: %.3f Unit^2", circle(r));
     }
     
-    if(shape == 's') {
+    else if(shape == 's') {
         float s;
         printf("\nCalculating the area of a square\n");
         printf("\nEnter side of the square: ");
@@ -47,7 +47,7 @@ if((shape == 'r') | (shape == 'c') | (shape == 's') | (shape == 't') | (shape ==
         printf("\nArea of the square is: %.3f Unit^2", square(s));
     }
     
-    if(shape == 't') {
+    else if(shape == 't') {
         float b, h;
         printf("\nCalculating the area of a triangle\n");
         printf("\nEnter base of the triangle: ");
@@ -57,7 +57,7 @@ if((shape == 'r') | (shape == 'c') | (shape == 's') | (shape == 't') | (shape ==
         printf("\nArea of the triangle is: %.3f Unit^2", triangle(b, h));
     }
     
-    if(shape == 'w') {
+    else if(shape == 'w') {
         float lb, ub, h;
         printf("\nCalculating the area of a trapezium\n");
         printf("\nEnter lower base of the trapezium: ");
@@ -69,7 +69,7 @@ if((shape == 'r') | (shape == 'c') | (shape == 's') | (shape == 't') | (shape ==
         printf("\nArea of the trapezium is: %.3f Unit^2", trapezium(lb, ub, h));
     }
     
-    if(shape == 'v') {
+    else if(shape == 'v') {
         float t, r;
         printf("\nCalculating the area of a sector\n");
         printf("\nEnter the angle subtended by the sector: ");
@@ -79,7 +79,7 @@ if((shape == 'r') | (shape == 'c') | (shape == 's') | (shape == 't') | (shape ==
         printf("\nArea of the sector is: %.3f Unit^2", sector(t, r));
     }
 
-    if(shape == 'e') {
+    else if(shape == 'e') {
         float a, b;
         printf("\nCalculating the area of an ellipse\n");
         printf("\nEnter the radius at minor axis: ");
@@ -89,7 +89,7 @@ if((shape == 'r') | (shape == 'c') | (shape == 's') | (shape == 't') | (shape ==
         printf("\nArea of the ellipse is: %.3f Unit^2", ellipse(a, b));
     }
 
-    if(shape == 'q') {
+    else if(shape == 'q') {
         float a;
         printf("\nCalculating the surface area of a cube\n");
         printf("\nEnter the side of the cube: ");
@@ -97,7 +97,7 @@ if((shape == 'r') | (shape == 'c') | (shape == 's') | (shape == 't') | (shape ==
         printf("\nSurface area of the cube is: %.3f Unit^2", cube(a));
     }
 
-    if(shape == 'y') {
+    else if(shape == 'y') {
         float r, h;
         printf("\nCalculating the total surface area of a cylinder\n");
         printf("\nEnter the radius of the cylinder: ");
@@ -108,6 +108,11 @@ if((shape == 'r') | (shape == 'c') | (shape == 's') | (shape == 't') | (shape ==
     }
     
 }
+
+else {
+        printf("Please enter a valid character for the corresponding shape!\n");
+        printf("Read the code comments for more information.");
+    }
 
 
     return 0;
