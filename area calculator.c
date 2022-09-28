@@ -11,15 +11,13 @@ float cube(float a);
 float cylinder(float r, float h);
 
 int main() {
-    
-    //For 2D Shapes - Use 'r' for rectangle, 'c' for circle, 's' for square. 't' for triangle, 'w' for trapezium, 'v' for sector, 'e' for ellipse
-    //For 3D Shapes - Use 'q' for cube, 'y' for TSA of cylinder
-    
+
+    printf("\nFor 2D Shapes - Use 'r' for rectangle, 'c' for circle, 's' for square. 't' for triangle, 'w' for trapezium, 'v' for sector, 'e' for ellipse");
+    printf("\nFor 3D Shapes - Use 'q' for cube, 'y' for TSA of cylinder\n");
+
     printf("\nEnter shape to find the area: ");
     char shape;
     scanf("%c", &shape);
-    
-if((shape == 'r') | (shape == 'c') | (shape == 's') | (shape == 't') | (shape == 'w') | (shape == 'v') | (shape == 'e') | (shape == 'q') | (shape == 'y')) {
     
     if(shape == 'r') {
         float a, b;
@@ -106,14 +104,11 @@ if((shape == 'r') | (shape == 'c') | (shape == 's') | (shape == 't') | (shape ==
         scanf("%f", &h);
         printf("\nTotal surface area of the cylinder is: %.3f Unit^2", cylinder(r, h));
     }
-    
-}
 
-else {
-        printf("Please enter a valid character for the corresponding shape!\n");
+    else {
+        printf("\nPlease enter a valid character for the corresponding shape!\n");
         printf("Read the code comments for more information.");
     }
-
 
     return 0;
 }
