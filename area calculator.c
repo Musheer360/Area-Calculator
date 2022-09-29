@@ -1,150 +1,127 @@
 #include <stdio.h>
-
-float rectangle(float a, float b);
-float circle(float r);
-float square(float s);
-float triangle(float b, float h);
-float trapezium(float lb, float ub, float h);
-float sector(float t, float r);
-float ellipse(float a, float b);
-float cube(float a);
-float cylinder(float r, float h);
+#include <math.h>
 
 int main() {
 
+char ch;
+char shape;
+float result;
+float a, b, r, s, bt, ht, w, lb, ub, htt, th, rs, ae, be, qb, rc, hc;
+
+print:
     printf("\nFor 2D Shapes - Use 'r' for rectangle, 'c' for circle, 's' for square. 't' for triangle, 'w' for trapezium, 'v' for sector, 'e' for ellipse");
     printf("\nFor 3D Shapes - Use 'q' for cube, 'y' for TSA of cylinder\n");
 
     printf("\nEnter shape to find the area: ");
-    char shape;
-    scanf("%c", &shape);
-    
-    if(shape == 'r') {
-        float a, b;
+    scanf("%s", &shape);
+
+    switch(shape) {
+        case 'r' :
         printf("\nCalculating the area of a rectangle\n");
         printf("\nEnter length of the rectangle: ");
         scanf("%f", &a);
         printf("\nEnter width of the rectangle: ");
         scanf("%f", &b);
-        printf("\nArea of the rectangle is: %.3f Unit^2", rectangle(a, b));
-    }
-
-    else if(shape == 'c') {
-        float r;
+        result = a * b;
+        printf("\nArea of the rectangle is: %.3f Unit^2", result);
+                break;
+        
+        case 'c' :
         printf("\nCalculating the area of a circle\n");
         printf("\nEnter radius of the circle: ");
         scanf("%f", &r);
-        printf("\nArea of the circle is: %.3f Unit^2", circle(r));
-    }
-    
-    else if(shape == 's') {
-        float s;
+        result = 3.1415926535 * r * r;
+        printf("\nArea of the circle is: %.3f Unit^2", result);
+                break;
+        
+        case 's' :
         printf("\nCalculating the area of a square\n");
         printf("\nEnter side of the square: ");
         scanf("%f", &s);
-        printf("\nArea of the square is: %.3f Unit^2", square(s));
-    }
-    
-    else if(shape == 't') {
-        float b, h;
+        result = s * s;
+        printf("\nArea of the square is: %.3f Unit^2", result);
+                break;
+        
+        case 't' :
         printf("\nCalculating the area of a triangle\n");
         printf("\nEnter base of the triangle: ");
-        scanf("%f", &b);
+        scanf("%f", &bt);
         printf("\nEnter height of the triangle: ");
-        scanf("%f", &h);
-        printf("\nArea of the triangle is: %.3f Unit^2", triangle(b, h));
-    }
-    
-    else if(shape == 'w') {
-        float lb, ub, h;
+        scanf("%f", &ht);
+        result = (ht * bt) / 2;
+        printf("\nArea of the triangle is: %.3f Unit^2", result);
+                break;
+        
+        case 'w' :
         printf("\nCalculating the area of a trapezium\n");
         printf("\nEnter lower base of the trapezium: ");
         scanf("%f", &lb);
         printf("\nEnter upper base of the trapezium: ");
         scanf("%f", &ub);
         printf("\nEnter height of the trapezium: ");
-        scanf("%f", &h);
-        printf("\nArea of the trapezium is: %.3f Unit^2", trapezium(lb, ub, h));
-    }
-    
-    else if(shape == 'v') {
-        float t, r;
+        scanf("%f", &htt);
+        result = ((lb + ub) / 2) * htt;
+        printf("\nArea of the trapezium is: %.3f Unit^2", result);
+                break;
+        
+        case 'v' :
         printf("\nCalculating the area of a sector\n");
         printf("\nEnter the angle subtended by the sector: ");
-        scanf("%f", &t);
+        scanf("%f", &th);
         printf("\nEnter the radius of the sector: ");
-        scanf("%f", &r);
-        printf("\nArea of the sector is: %.3f Unit^2", sector(t, r));
-    }
-
-    else if(shape == 'e') {
-        float a, b;
+        scanf("%f", &rs);
+        result = (th / 360) * 3.1415926535 * rs * rs;
+        printf("\nArea of the sector is: %.3f Unit^2", result);
+                break;
+        
+        case 'e' :
         printf("\nCalculating the area of an ellipse\n");
         printf("\nEnter the radius at minor axis: ");
-        scanf("%f", &a);
+        scanf("%f", &ae);
         printf("\nEnter the radius at major axis: ");
-        scanf("%f", &b);
-        printf("\nArea of the ellipse is: %.3f Unit^2", ellipse(a, b));
-    }
+        scanf("%f", &be);
+        result = 3.1415926535 * ae * be;
+        printf("\nArea of the ellipse is: %.3f Unit^2", result);
+                break;
 
-    else if(shape == 'q') {
-        float a;
+        case 'q' :
         printf("\nCalculating the surface area of a cube\n");
         printf("\nEnter the side of the cube: ");
-        scanf("%f", &a);
-        printf("\nSurface area of the cube is: %.3f Unit^2", cube(a));
-    }
+        scanf("%f", &qb);
+        result = 6 * (qb * qb);
+        printf("\nSurface area of the cube is: %.3f Unit^2", result);
+                break;
 
-    else if(shape == 'y') {
-        float r, h;
+        case 'y' :
         printf("\nCalculating the total surface area of a cylinder\n");
         printf("\nEnter the radius of the cylinder: ");
-        scanf("%f", &r);
+        scanf("%f", &rc);
         printf("\nEnter the height of the cylinder: ");
-        scanf("%f", &h);
-        printf("\nTotal surface area of the cylinder is: %.3f Unit^2", cylinder(r, h));
+        scanf("%f", &hc);
+        result = 2 * 3.1415926535 * rc * (rc + hc);
+        printf("\nTotal surface area of the cylinder is: %.3f Unit^2", result);
+                break;
+        
+        default : printf("\nPlease enter a valid character for the corresponding shape!");
     }
 
+again:
+    printf ("\n\nDo you want to repeat the operation? (Y/N) ");
+    scanf (" %c", &ch);
+
+    if(ch == 'y' || ch == 'Y') {
+        goto print;
+    }
+    
+    else if(ch == 'n' || ch == 'N') {
+        printf("\nExiting the program...\n");
+        printf("\nDone!\n\n");
+    }
+    
     else {
-        printf("\nPlease enter a valid character for the corresponding shape!\n");
-        printf("Read the code comments for more information.");
+        printf("\nPlease enter Yes or No!");
+        goto again;
     }
 
     return 0;
-}
-
-float rectangle(float a, float b) {
-    return a * b;
-}
-
-float circle(float r) {
-    return 3.1415926535 * r * r;
-}
-
-float square(float s) {
-    return s * s;
-}
-
-float triangle(float b, float h) {
-    return (h * b) / 2;
-}
-
-float trapezium(float lb, float ub, float h) {
-    return ((lb + ub) / 2) * h;
-}
-
-float sector(float t, float r) {
-    return (t / 360) * 3.1415926535 * r * r;
-}
-
-float ellipse(float a, float b) {
-    return 3.1415926535 * a * b;
-}
-
-float cube(float a) {
-    return 6 * (a * a);
-}
-
-float cylinder(float r, float h) {
-    return 2 * 3.1415926535 * r * (r + h);
 }
