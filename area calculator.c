@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 int main() {
 
@@ -9,8 +8,8 @@ float result;
 float a, b, r, s, bt, ht, w, lb, ub, htt, th, rs, ae, be, qb, rc, hc;
 
 print:
-    printf("\nFor 2D Shapes - Use 'r' for rectangle, 'c' for circle, 's' for square. 't' for triangle, 'w' for trapezium, 'v' for sector, 'e' for ellipse");
-    printf("\nFor 3D Shapes - Use 'q' for cube, 'y' for TSA of cylinder\n");
+    printf("For 2D Shapes:\nUse 'r' for rectangle,\nUse 'c' for circle,\nUse 's' for square\nUse 't' for triangle,\nUse 'w' for trapezium,\nUse 'v' for sector,\nUse 'e' for ellipse");
+    printf("\n\nFor 3D Shapes:\nUse 'q' for cube,\nUse 'y' for TSA of cylinder\n");
 
     printf("\nEnter shape to find the area: ");
     scanf("%s", &shape);
